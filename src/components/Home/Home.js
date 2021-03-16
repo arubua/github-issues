@@ -1,18 +1,17 @@
-import React, { Component } from "react";
+import { Box, Badge, Image, Text, Spinner } from "@chakra-ui/react";
+import React from "react";
+import { useQuery } from "@apollo/client";
+import * as schema from "../../Graphql/Schemas";
+import Loading from "../shared/Loading";
+import UserSummary from "./UserSummary";
 
-class Home extends Component {
-  render() {
-    return (
-      <div className="homepage">
-        <div className="searchbar">
-          <button className="filter">Filter</button>
-          <input />
-          <button className="newIssue">New Issue</button>
-        </div>
-        <div className="issuesTable"></div>
-      </div>
-    );
+const Home = () => {
+  const { loading, data } = useQuery(schema.GET_USER);
+
+  if (loading) {
+    return <Loading />;
   }
-}
+  return <UserSummary data={data} width="100%" />;
+};
 
 export default Home;
