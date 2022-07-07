@@ -20,6 +20,7 @@ const breakpoints = createBreakpoints({
 });
 
 const UserSummary = (props) => {
+  console.log(props);
   const user = props.data.viewer;
   return (
     <Box maxW="900px" mx="auto" overflow="hidden">

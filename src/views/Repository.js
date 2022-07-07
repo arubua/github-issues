@@ -1,9 +1,9 @@
 import React from "react";
 
 import { useQuery } from "@apollo/client";
-import * as schema from "../../Graphql/Schemas";
-import Loading from "../shared/Loading";
-import SearchComponent from "./SearchComponent";
+import * as schema from "../Graphql/Schemas";
+import Loading from "../components/shared/Loading";
+import SearchComponent from "../components/Repository/SearchComponent";
 
 const Repository = () => {
   const { loading, data } = useQuery(schema.GET_ISSUES);
