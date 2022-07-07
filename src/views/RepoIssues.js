@@ -1,8 +1,8 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import * as schema from "../../Graphql/Schemas";
+import * as schema from "../Graphql/Schemas";
 import { Box } from "@chakra-ui/layout";
-import RepoIssue from "./RepoIssue";
+import RepoIssue from "../components/Repository/RepoIssue";
 
 const RepoIssues = (props) => {
   const { name, owner } = props.match.params;
